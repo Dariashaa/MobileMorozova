@@ -26,8 +26,8 @@ class SplashActivity : AppCompatActivity() {
     private fun navigateNext() {
         val target = when {
             !NetworkUtils.hasInternet(this) -> NoInternetActivity::class.java
-            !isOnboardingDone()             -> MainActivity::class.java
-            !isTokenValid()                 -> MainActivity::class.java
+            !isOnboardingDone()             -> OnboardingActivity::class.java
+            !isTokenValid()                 -> LoginActivity::class.java
             else                            -> MainActivity::class.java
         }
         startActivity(Intent(this, target))
