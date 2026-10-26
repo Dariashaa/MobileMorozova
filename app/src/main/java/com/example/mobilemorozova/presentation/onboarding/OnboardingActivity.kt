@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mobilemorozova.presentation.login.LoginActivity
 import com.example.mobilemorozova.R
+import com.example.mobilemorozova.presentation.ViewModelFactory
 import com.google.android.material.button.MaterialButton
 
 class OnboardingActivity : AppCompatActivity() {
@@ -31,6 +33,8 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var indicators: LinearLayout
     private lateinit var btnNext: MaterialButton
+
+    private val viewModel: OnboardingViewModel by viewModels { ViewModelFactory(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,10 +87,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun finishOnboarding() {
-        getSharedPreferences("prefs", MODE_PRIVATE)
-            .edit()
-            .putBoolean("onboarding_done", true)
-            .apply()
+        viewModel.finishOnboarding()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
