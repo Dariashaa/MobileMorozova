@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileMorozova">
         <activity
-            android:name=".SplashActivity"
+            android:name=".presentation.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
@@ -25,21 +25,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.MobileMorozova"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".NoInternetActivity"
+            android:name=".presentation.nointernet.NoInternetActivity"
             android:exported="false"
             android:theme="@style/Theme.MobileMorozova"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".presentation.onboarding.OnboardingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".presentation.login.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

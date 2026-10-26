@@ -1,4 +1,4 @@
-package com.example.mobilemorozova
+package com.example.mobilemorozova.presentation.onboarding
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,17 +7,25 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.mobilemorozova.presentation.login.LoginActivity
+import com.example.mobilemorozova.R
 import com.google.android.material.button.MaterialButton
 
 class OnboardingActivity : AppCompatActivity() {
 
     private val pages = listOf(
-        OnboardingPage(R.drawable.onboarding_1, "Аренда автомобилей",
-            "Открой для себя удобный и доступный способ передвижения"),
-        OnboardingPage(R.drawable.onboarding_2, "Безопасно и удобно",
-            "Арендуй автомобиль и наслаждайся его удобством"),
-        OnboardingPage(R.drawable.onboarding_3, "Лучшие предложения",
-            "Выбирай понравившееся среди сотен доступных автомобилей")
+        OnboardingPage(
+            R.drawable.onboarding_1, "Аренда автомобилей",
+            "Открой для себя удобный и доступный способ передвижения"
+        ),
+        OnboardingPage(
+            R.drawable.onboarding_2, "Безопасно и удобно",
+            "Арендуй автомобиль и наслаждайся его удобством"
+        ),
+        OnboardingPage(
+            R.drawable.onboarding_3, "Лучшие предложения",
+            "Выбирай понравившееся среди сотен доступных автомобилей"
+        )
     )
 
     private lateinit var viewPager: ViewPager2

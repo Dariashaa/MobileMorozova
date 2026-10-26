@@ -1,10 +1,11 @@
-package com.example.mobilemorozova
+package com.example.mobilemorozova.presentation.onboarding
 
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.mobilemorozova.R
 
 class OnboardingPageFragment : Fragment(R.layout.fragment_onboarding_page) {
 

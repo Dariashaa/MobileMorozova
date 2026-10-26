@@ -1,4 +1,4 @@
-package com.example.mobilemorozova   // ← оставь свою строку package
+package com.example.mobilemorozova.presentation.splash
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -9,7 +9,12 @@ import android.os.Looper
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import kotlin.jvm.java
+import com.example.mobilemorozova.presentation.login.LoginActivity
+import com.example.mobilemorozova.presentation.main.MainActivity
+import com.example.mobilemorozova.data.NetworkRepositoryImpl
+import com.example.mobilemorozova.presentation.nointernet.NoInternetActivity
+import com.example.mobilemorozova.presentation.onboarding.OnboardingActivity
+import com.example.mobilemorozova.R
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -25,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     private fun navigateNext() {
         val target = when {
-            !NetworkUtils.hasInternet(this) -> NoInternetActivity::class.java
+            !NetworkRepositoryImpl.hasInternet(this) -> NoInternetActivity::class.java
             !isOnboardingDone()             -> OnboardingActivity::class.java
             !isTokenValid()                 -> LoginActivity::class.java
             else                            -> MainActivity::class.java

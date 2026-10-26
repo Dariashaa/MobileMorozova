@@ -1,7 +1,8 @@
-package com.example.mobilemorozova
+package com.example.mobilemorozova.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mobilemorozova.R
 
 class MainActivity : AppCompatActivity() {
 
